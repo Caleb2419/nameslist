@@ -80,7 +80,7 @@ function loadNames () {
 				deleteButton.classList.add("edit-delete-update");
 				deleteButton.onclick = function() {
 					if (confirm("Are you sure you want to delete " + name.f_name + " " + name.l_name + "?")) {
-						deleteNameOnServer(name.name_id);
+						deleteNameOnServer(name.id);
 					}
 				};
 				listItem.appendChild(deleteButton);
@@ -161,7 +161,7 @@ function loadNames () {
 							updateData += "&gender=" + encodeURIComponent(genderUpdate);
 							updateData += "&age=" + encodeURIComponent(ageUpdate);
 
-							editNameOnServer(name.name_id, updateData);
+							editNameOnServer(name.id, updateData);
 						}
 					};
 					listItem.appendChild(updateButton);
